@@ -3,7 +3,7 @@ public class Carro {
     public String cor;
     public String modelo;
     public Double velocidadeAtual;
-    public final Double velocidadeMaxima;
+    public Double velocidadeMaxima;
 
     public Boolean ligado = false;
 
@@ -12,7 +12,7 @@ public class Carro {
     }
 
     public void setCor(String cor){
-        this.cor = cores;
+        this.cor = cor;
     }
 
     public String getModelo(){
@@ -35,8 +35,8 @@ public class Carro {
         return this.ligado;
     }
 
-    public Carro(String cor, String modelo, Double velocidadeMáxima){
-        velocidadeAtual = 0;
+    public Carro(String cor, String modelo, Double velocidadeMaxima){
+        this.velocidadeAtual = 0.0;
         this.cor = cor;
         this.modelo = modelo;
         this.velocidadeMaxima = velocidadeMaxima;
@@ -45,10 +45,10 @@ public class Carro {
 
 
     //liga o carro
-    public Boolean ligaedesliga() {
-        if (!this.ligado){
+    public Boolean ligaedesliga(Boolean ligaDesliga) {
+        if (ligaDesliga != this.ligado){
             this.ligado = true;
-            System.out.println("O carro foi desligado");
+            System.out.println("O carro foi ligado");
         } else {
             this.ligado = false;
             System.out.println("O carro foi ligado");
@@ -64,7 +64,7 @@ public class Carro {
     }
     //devolve a marcha do carro
     public Integer pegaMarcha() {
-        if (this.velocidadeAtual < 0,0) {
+        if (this.velocidadeAtual < 0.0) {
             return -1;
         }
         if (this.velocidadeAtual >= 0.00 || this.velocidadeAtual < 40) {
